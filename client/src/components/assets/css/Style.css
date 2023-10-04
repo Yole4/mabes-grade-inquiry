@@ -1,0 +1,831 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: Sitka Display; */
+}
+
+.container {
+    background-color: #092756;
+    background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -moz-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -webkit-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -o-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -o-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -ms-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -ms-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+    background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #670d10 0%, #092756 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-body {
+    border: 1px solid #ccc;
+    width: 500px;
+    padding: 30px;
+    background-color: rgb(219, 216, 216);
+    border-radius: 10px;
+}
+
+.form-control {
+    margin-top: 15px;
+}
+
+.form-control button {
+    background-color: rgb(143, 143, 196);
+    cursor: pointer;
+}
+
+.form-control button:hover {
+    background-color: rgb(176, 176, 255);
+}
+
+.form-input {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 10px;
+    font-size: 17px;
+    border-color: transparent;
+    background-color: #f3f1f1;
+    border-radius: 5px;
+}
+
+.form-control span {
+    font-size: 18px;
+}
+
+;
+
+.form-input:hover {
+    border-color: rgb(172, 172, 222);
+}
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.input-body {
+    display: flex;
+}
+
+.checkbox-label {
+    margin-left: 5px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.checkbox-label:hover {
+    color: rgb(73, 73, 181);
+}
+
+.icon {
+    margin: 18px 10px 10px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.header {
+    width: calc(100% - 300px);
+    height: 60px;
+    background-color: #55a8e3;
+    margin-left: 300px;
+    color: #c8cfdc;
+}
+
+.side-bar {
+    width: 300px;
+    min-height: 100vh;
+    margin-top: -60px;
+    background-color: #344055;
+    color: #c8cfdc;
+    padding: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+@keyframes barReverse {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.profile {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: rgb(48, 70, 76);
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.cancel-edit {
+    z-index: 5;
+}
+
+.profile:hover {
+    background-color: white;
+}
+
+.pop-up-modal-profile {
+    position: fixed;
+}
+
+.body-area {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    min-height: calc(100vh - 60px);
+}
+
+.profile-list {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #e7e7e7;
+    width: auto;
+    padding: 20px;
+    border-radius: 7px;
+    color: black;
+    z-index: 2;
+}
+
+.profile-parent {
+    width: 200px;
+    padding: 10px;
+    /* background-color: white; */
+    margin-top: 5px;
+    display: flex;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.profile-parent:hover {
+    background-color: #d9d9da;
+    border-radius: 10px;
+}
+
+.profile-parent span {
+    margin: 5px 0px 0px 10px;
+}
+
+.close-bar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.close-bar:hover {
+    background-color: #5a7797;
+}
+
+.user-type {
+    display: flex;
+    margin: -10px 0px 3px 0px;
+    width: 100%;
+    padding: 5px;
+}
+
+.user-span {
+    display: flex;
+    /* width: 80%; */
+    padding: 10px;
+    width: 80%;
+}
+
+.user-span label {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.user-span:hover {
+    cursor: pointer;
+    background-color: #5a7797;
+    border-radius: 10px;
+}
+
+.user-type span {
+    font-size: 25px;
+    margin: 5px 0 0 20px;
+}
+
+.top {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.bars {
+    cursor: pointer;
+    padding: 10px;
+    width: 10px;
+}
+
+.bars span:hover {
+    color: rgb(52, 49, 49);
+}
+
+.top:hover {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #5a7797;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.top span {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.hr {
+    border-color: #616773;
+}
+
+.font-icon {
+    position: absolute;
+    right: 34px;
+}
+
+.side {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    cursor: pointer;
+}
+
+.side-parent {
+    background-color: #5a626c;
+    color: white;
+    border-radius: 10px;
+    color: rgb(223, 218, 218);
+}
+
+.side:hover {
+    background-color: #5a7797;
+    color: white;
+    font-weight: bold;
+}
+
+.side span {
+    margin-left: 10px;
+}
+
+.side-list {
+    padding: 7px 10px;
+    margin-left: 30px;
+    background-color: #616b75;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+}
+
+.side-list span {
+    margin-left: 10px;
+}
+
+.side-list:hover {
+    background-color: #5a7797;
+    color: white;
+    font-weight: bold;
+}
+
+.add-button-background {
+    background-color: #5a7797;
+    color: white;
+    font-weight: bold;
+}
+
+.body-header {
+    width: 100%;
+    margin-left: 0;
+}
+
+.update-side-bar {
+    display: none;
+}
+
+.eye {
+    margin-left: 385px;
+    margin-top: 17px;
+}
+
+.popup-modal-profile {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 4;
+}
+
+.popup-body {
+    position: absolute;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    width: 450px;
+    padding: 20px 20px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+
+}
+
+@keyframes dropBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+
+
+/* Users Side */
+.body-side {
+    width: 98%;
+    margin-left: 1%;
+    height: calc(100vh - 60px);
+}
+
+.header-none {
+    height: 50px;
+    width: 100%;
+}
+
+.header-label {
+    border: 2px solid #ccc;
+    height: 80%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 5px -1px #ccc;
+}
+
+.user-header {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(67, 67, 202);
+}
+
+.additional-user {
+    width: 300px;
+    margin-left: 20px;
+    height: 30px;
+    border: 1px solid lightblue;
+    border-radius: 3px 0 0 3px;
+    padding: 0px 10px 0px 10px;
+}
+
+.additional-user:hover {
+    border: 2px solid rgb(135, 168, 178);
+}
+
+.delete-edit {
+    display: flex;
+    margin-left: auto;
+}
+
+.delete-edit button {
+    width: 130px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.delete-button button {
+    background-color: rgb(255, 112, 112);
+    margin-right: 15px;
+}
+
+.delete-button button:hover {
+    background-color: rgb(195, 83, 83);
+    border-radius: 10px;
+}
+
+.edit-button button {
+    background-color: rgb(91, 91, 255);
+}
+
+.edit-button button:hover {
+    background-color: rgb(63, 63, 184);
+    border-radius: 10px;
+}
+
+.table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: calc(100%-40px);
+    margin: 20px;
+    min-height: 71%;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+}
+
+.table table {
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 10px;
+}
+
+table thead th {
+    background-color: rgb(203, 203, 237);
+}
+
+.tr {
+    cursor: pointer;
+}
+
+/* .tr:nth-child(even) {
+    background-color: #f2f2f2;
+} */
+.selected{
+    background-color: lightblue;
+}
+
+.tr:hover {
+    background-color: rgb(213, 237, 244);
+}
+
+.delete-icon,
+.edit-icon {
+    position: absolute;
+    color: white;
+    font-size: 19px;
+}
+
+.delete-icon {
+    margin: 5px 0 0 12px;
+}
+
+.edit-icon {
+    margin: 5px 0 0 20px;
+}
+
+/* student popup */
+.popup-student {
+    align-items: center;
+}
+
+.student-body {
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: inset 1px 1px 10px -1px #ccc;
+    padding: 30px;
+}
+
+.popup-edit {
+    padding: 0px 20px 20px 20px;
+    font-size: 20px;
+    margin-left: -20px;
+    font-weight: bold;
+    color: rgb(67, 67, 202);
+}
+
+.manage-account span {
+    font-size: 15px;
+}
+
+.m {
+    flex: 1;
+}
+
+.manage-account input {
+    font-size: 15px;
+}
+
+.form-control .cancel-button {
+    width: 30%;
+    height: 30px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(255, 115, 115);
+    color: white;
+    font-size: 15px;
+}
+
+.form-control .cancel-button:hover {
+    background-color: rgb(198, 89, 89);
+}
+
+.form-control .update-button {
+    width: 30%;
+    height: 30px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(104, 66, 255);
+    color: white;
+    font-size: 15px;
+}
+
+.form-control .update-button:hover {
+    background-color: rgb(82, 53, 197);
+}
+
+.add-button {
+    margin-left: 20px;
+
+}
+
+.add-button button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(127, 95, 255);
+    color: white;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.add-button button:hover {
+    background-color: rgb(82, 53, 197);
+}
+
+.generatePass {
+    float: right;
+    padding: 5px 10px 5px 10px;
+    border: 2px;
+    color: white;
+}
+
+.generatePass:hover {
+    background-color: lightblue;
+}
+
+.add-icon {
+    position: absolute;
+    margin-top: 15px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.add-student-data {
+    width: 900px;
+}
+
+/* loading side */
+.modal-pop-up-loading {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #ebe4e4;
+    border-radius: 7px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 20;
+    box-shadow: 1px 1px 20px -1px rgb(150, 149, 149);
+}
+
+.modal-pop-up-loading-spiner {
+    margin-left: 27px;
+    margin-top: 20px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+.error-respond {
+    position: fixed;
+    width: 50%;
+    box-shadow: 0px 0px 10px rgb((0, 0, 0, 0.2));
+    border-radius: 8px;
+    padding: 10px 20px;
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+    z-index: 10;
+    text-align: center;
+    color: rgb(73, 23, 23);
+    animation: errorAnimate .5s linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.title-label{
+    font-family: "Castellar", sans-serif !important;
+    position: absolute;
+    top: 15px;
+    margin-left: 60px;
+    font-size: 25px;
+    color: #fff;;
+    letter-spacing: 2px; 
+}
+
+.notification-icon{
+    right: 60px;
+    background-color: transparent;
+    color: rgb(213, 211, 211);
+    cursor:auto;
+}
+.notification-number{
+    border-radius: 20px;
+    background-color: rgb(255, 191, 0);
+    position: absolute;
+    right: 2px;
+    top: 0;
+    width: auto;
+    height: auto;
+    padding: 0px 3px;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+}
+.notification-icon:hover{
+    background-color: transparent;
+}
+.not-icon:hover{
+    color: white;
+    cursor: pointer;
+}
+.notification-list{
+    position: absolute;
+    top: 40px;
+    right: 8px;
+    height: auto;
+    width: 300px;
+    background-color: rgb(242, 242, 242);
+    border-radius: 5px;
+    box-shadow: inset 2px 4px -1px #ccc;
+    z-index: 4;
+}
+.five-not-list{
+    text-align: left;
+    display: flex;
+    font-size: 15px;
+    margin: 5px 10px;   
+    color: rgb(93, 93, 93);
+    background-color: #dbdbdb;
+    padding: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.five-not-list:hover{
+    background-color: rgb(227, 227, 228);
+}
+.seen{
+    background-color: rgb(242, 242, 242);
+}
+.left-not{
+    position: absolute;
+    color: rgb(93, 93, 93);
+}   
+.not-text{
+    margin-left: 40px;
+    width: 100%;
+}
+.not-found{
+    font-size: 15px;
+    padding: 15px;
+    cursor: pointer;
+}
+.not-found:hover{
+    background-color: rgb(227, 227, 228);
+    border-radius: 5px;
+}
+
+
+/* Responsive desgin */
+/* 912px */
+@media screen and (max-width: 912px) {
+    .header {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .body-area {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .close-bar {
+        display: block;
+    }
+
+    .add-student-data {
+        width: 690px;
+    }
+}
+
+/* 700px */
+@media screen and (max-width: 700px) {
+    .delete-edit button {
+        display: none;
+    }
+
+    .title-label{
+        font-size: 20px;
+        top: 18px;
+    }
+
+    .error-respond {
+        width: 100%;
+    }
+
+    .add-student-data {
+        width: 500px;
+    }
+
+    .additional-user {
+        width: 250px;
+    }
+
+    .delete-icon,
+    .edit-icon {
+        position: relative;
+        right: -10px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .delete-icon {
+        /* margin-right: 10px; */
+        color: red;
+    }
+
+    .edit-icon {
+        margin-left: 5px;
+        color: blue;
+    }
+}
+
+
+/* 500px */
+@media screen and (max-width: 500px) {
+    .login-body {
+        width: 95%;
+    }
+
+    .title-label{
+        font-size: 13px;
+        top: 24px;
+        width: 200px;
+    }
+
+    .m {
+        flex: 100%;
+    }
+
+    .eye {
+        position: absolute;
+        right: 45px;
+    }
+
+    .popup-body {
+        width: 94%;
+    }
+
+    .notification-list{
+        right: 0;
+        width: 260px;
+    }
+}
